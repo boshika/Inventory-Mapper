@@ -1,0 +1,47 @@
+<div ng-controller="ordersController">
+   <div class="one-half column">
+	    <form class="form" name="form" novalidate>
+	    	<label>Customer:</label>
+	    	<select class="u-full-width" ng-model="new_order.customer" required>
+	    		<option ng-repeat="customer in customers">{{customer.name}}</option>
+	    	</select>
+
+	    	<!-- <input ng-model='new_order.name' type="text" placeholder="Name"> -->
+	    	<label>Quantity</label>
+	    	<select ng-model="new_order.qty" required>
+	    		<option>1</option>
+	    		<option>2</option>
+	    		<option>3</option>
+	    	</select>
+	    	<label>Product</label>
+	    	<select ng-model="new_order.product" required>
+	    		<option ng-repeat="product in products">{{product.product_name}}</option>
+	    	</select>
+	    	<input class="button-primary" type="submit" value="Add" ng-click="add_order(new_order)" ng-disabled="form.$invalid">
+            <div class="alert alert-danger" ng-show="form.$invalid">
+                <small>All fields are require</small>
+            </div>
+	    </form>
+	</div>
+    <div class="one-half column" >
+    	<input ng-model="filter_name" type="text" placeholder="Search">
+
+    </div>
+    <table class="u-full-width">
+    	<tr>
+    		<td>Customer Name</td>
+    		<td>Product</td>
+    		<td>Quantity</td>
+    		<td>Date</td>
+    		<td>Action</td>
+    	</tr>
+    	<tr ng-repeat="order in orders | filter: filter_name">
+    		<td>{{ order.customer }}</td>
+    		<td>{{ order.product }}</td>
+    		<td>{{ order.qty }}</td>
+    		<td>{{ order.created_at | date : 'MMMM d, yyyy'}}</td>
+    		<td><a class="button button-primary" href="#/orders" ng-click="remove_order(order)">Remove</a></td>
+    	</tr>
+    </table>
+    {{ message }}
+</div>
