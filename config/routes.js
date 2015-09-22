@@ -7,7 +7,7 @@ module.exports = function(app) {
 
 	app.post('/addcustomer', function (req, res)
 	{
-		// console.log('made it to routes:', req.body);
+		// console.log('add customer' ,req.body);
 		customers.addcustomer(req, res);
 	});
 
@@ -18,19 +18,20 @@ module.exports = function(app) {
 
 	app.post('/delete_customer', function (req, res)
 	{
-		// console.log('wowooo! in routes: ', req.body);
+		// console.log('delete customer', req.body);
 		customers.delete_customer(req, res);
 	})
 
 	app.post('/add_order', function (req, res)
 	{
-		// console.log('in routes', req.body);
+		// console.log('add order', req.body);
 		orders.add_order(req, res);
 
 	})
 
 	app.get('/get_orders', function (req, res)
 	{
+	  // console.log('get order', req.body);
 		orders.get_orders(req, res);
 
 	})
@@ -38,13 +39,13 @@ module.exports = function(app) {
 	app.post('/remove_order', function (req, res)
 	{
 		orders.remove_order(req, res);
-		// console.log('in routes', req.body);
+		// console.log('remove orders', req.body);
 	})
 
 	app.post('/add_product', function (req, res)
 	{
 		products.add_product(req, res);
-		// console.log('in routes', req.body);
+		// console.log('add product', req.body);
 	})
 
 	app.get('/get_products', function (req, res)

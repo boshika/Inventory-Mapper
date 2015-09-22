@@ -168,7 +168,10 @@ store_app.controller('ordersController', function ($scope, orders_factory)
 {
     $scope.new_order = {};
 
-
+    $scope.number = 5;
+    $scope.getNumber = function(num) {
+    return new Array(num);   
+}
     function get_orders(){
     orders_factory.get_orders(function (data)
         {

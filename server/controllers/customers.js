@@ -6,7 +6,7 @@ module.exports = (function() {
 
 	addcustomer: function(req, res)
 	{
-		// console.log('server controller', req.body);
+		// console.log('This is the entire req object', req.body);
 		
 		// console.log(req.body.name);
 		Customer.findOne({name: req.body.name}, function(err, results) 
@@ -15,7 +15,7 @@ module.exports = (function() {
 
 			if (results)
 			{
-				res.json({err: "Duplicate name!"})
+				res.json({err: "Name Exists!"})
 			} 
 			else 
 			{
@@ -28,7 +28,6 @@ module.exports = (function() {
 					}
 					else
 					{
-						// console.log('we made it!');
 						res.json(result);
 						//DON'T FORGET THIS LINE
 					}
@@ -54,7 +53,7 @@ module.exports = (function() {
 	},
 	delete_customer: function(req, res)
 	{
-		console.log('wowooo! in S controllers: ', req.body._id);
+		console.log('HEY! REALLY WANT TO DELETE?: ', req.body._id);
 		Customer.remove({_id: req.body._id}, function(err, results)
 		{
 			if(err){

@@ -4,13 +4,13 @@
     <form name="form" class="form" novalidate>
             <h4>Add Products</h4>
             <label>Name</label>
+            
 
-
-            <input class="u-full-width" type="text" name="product_name" ng-model="new_product.product_name" ng-minlength=5 ng-maxlength=20 required>
+            <input class="u-full-width" type="text" name="product_name" ng-model="new_product.product_name" ng-minlength=5 ng-maxlength=100 required>
             <div class="alert alert-danger" ng-show="form.product_name.$dirty && form.product_name.$invalid">
                 <small class="error" ng-show="form.product_name.$error.required">Please input a product name</small>
                 <small class="error" ng-show="form.product_name.$error.minlength">Your product name is required to be at least 5 characters</small>
-                <small class="error" ng-show="form.product_name.$error.maxlength">Your product name cannot be longer than 20 characters</small>
+                <small class="error" ng-show="form.product_name.$error.maxlength">Your product name cannot be longer than 100 characters</small>
             </div>
 
             <label>Image</label>
@@ -25,11 +25,11 @@
 
             <label>Description</label>
 
-            <textarea class="u-full-width" name="product_description" ng-model="new_product.product_description" ng-minlength=10 ng-maxlength=20 required></textarea>
+            <textarea class="u-full-width" name="product_description" ng-model="new_product.product_description" ng-minlength=10 ng-maxlength=100 required></textarea>
             <div class="alert alert-danger" ng-show="form.product_description.$dirty && form.product_description.$invalid">
                 <small class="error" ng-show="form.product_description.$error.required">Please input a product description</small>
                 <small class="error" ng-show="form.product_description.$error.minlength">Your product description is required to be at least 10 characters</small>
-                <small class="error" ng-show="form.product_description.$error.maxlength">Your product description cannot be longer than 20 characters</small>
+                <small class="error" ng-show="form.product_description.$error.maxlength">Your product description cannot be longer than 100 characters</small>
             </div>
 
             <label>Quantity</label>

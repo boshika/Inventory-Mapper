@@ -9,9 +9,14 @@
 	    	<!-- <input ng-model='new_order.name' type="text" placeholder="Name"> -->
 	    	<label>Quantity</label>
 	    	<select ng-model="new_order.qty" required>
-	    		<option>1</option>
-	    		<option>2</option>
-	    		<option>3</option>
+            
+           <!--  <option ng-repeat="i in getNumber(number)"><span>{{$index+1}}</span></option> -->
+            
+        		<option>1</option>
+        		<option>2</option>
+        		<option>3</option>
+                <option>4</option>
+                <option>5</option>
 	    	</select>
 	    	<label>Product</label>
 	    	<select ng-model="new_order.product" required>

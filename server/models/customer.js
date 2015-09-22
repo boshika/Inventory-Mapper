@@ -12,7 +12,7 @@ var nameValidator = [
 
 var CustomerSchema = new mongoose.Schema({
   name: {type: String, required: true, validate: nameValidator},
-  created_at: Date
+  created_at: {type: Date, default: Date.now}
 });
 
 mongoose.model('Customer', CustomerSchema);
